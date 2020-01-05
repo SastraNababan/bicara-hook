@@ -1,0 +1,14 @@
+{
+  "name": "bicara-hook",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^3.19.0"
+  },
+  "scripts": {
+    "setup": "lerna bootstrap",
+    "part1": "lerna run start --scope=part-01",
+    "part2": "lerna run start --scope=part-02",
+    "part3": "lerna run start --scope=part-03",
+    "part4": "lerna run start --scope=part-04"
+  }
+}
