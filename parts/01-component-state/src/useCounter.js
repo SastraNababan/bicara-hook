@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
-function useCounter(){
-  const[state,setState] = useState(0)
+function useCounter(defaultValue){
+  const [state, setState] = useState(defaultValue);
   const handleState = () => {
     setState(currentState => currentState + 1)
   }
