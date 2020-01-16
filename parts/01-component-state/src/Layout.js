@@ -14,7 +14,7 @@ function Layout(props) {
       <main className="App-body">{props.children}</main>
       <footer className="App-footer">
         <div className="links">
-          <a href="https://youtube.com/SastraNababan">
+          <a href="https://www.youtube.com/watch?v=UgAkn8IsEkk&sub_confirmation=1">
             <img
               alt=""
               width={24}
