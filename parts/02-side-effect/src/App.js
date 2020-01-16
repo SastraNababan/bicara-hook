@@ -1,11 +1,20 @@
-import React from "react";
+/* eslint-disable no-unused-vars */
+import React, { useState } from "react";
 import "./App.css";
 import Layout from "./Layout";
+import MyClass from "./MyClass";
+import MyFunc from "./MyFunc";
+import NewsFeed from "./NewsFeed";
 
 function App() {
+  const [toggle,setToggle] = useState(true);
+  const handleToggle = ()=>setToggle(currentState => !currentState)
   return (
-    <Layout title="React Hook #1 - Component State">
-      <h1 style={{ textAlign: "center" }}> 😃 Coming Soon beibeh...</h1>
+    <Layout>
+      <button onClick={handleToggle}>Toggle</button>
+      {/* {toggle && <MyClass/>} */}
+      {/* {toggle && <MyFunc/>} */}
+      <NewsFeed/>
     </Layout>
   );
 }
