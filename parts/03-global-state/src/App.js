@@ -1,11 +1,15 @@
-import React from "react";
+/* eslint-disable no-unused-vars */
+import React, { Component, useState, createContext, useContext } from "react";
 import "./App.css";
 import Layout from "./Layout";
+import ContextPage from "./ContextPage";
+import TodoMVC from "./TodoMVC";
 
 function App() {
   return (
     <Layout>
-      <h1 style={{ textAlign: "center" }}> 😃 Coming Soon beibeh...</h1>
+      {/* <ContextPage/> */}
+      <TodoMVC/>
     </Layout>
   );
 }
