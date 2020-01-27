@@ -1,11 +1,19 @@
-import React from "react";
+/* eslint-disable no-unused-vars */
+import React, { Component, useState, createContext, useContext } from "react";
 import "./App.css";
 import Layout from "./Layout";
+import ContextPage from "./ContextPage";
+import ReducerPage from "./ReducerPage";
+import TodoMVCRedux from "./TodoMVC-Redux";
+import TodoMVCHook from "./TodoMVC-Hook";
 
 function App() {
   return (
     <Layout>
-      <h1 style={{ textAlign: "center" }}> 😃 Coming Soon beibeh...</h1>
+      <ContextPage/>
+      {/* <ReducerPage/> */}
+      {/* <TodoMVCRedux/> */}
+      {/* <TodoMVCHook/> */}
     </Layout>
   );
 }
