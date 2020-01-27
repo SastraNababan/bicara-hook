@@ -3,13 +3,17 @@ import React, { Component, useState, createContext, useContext } from "react";
 import "./App.css";
 import Layout from "./Layout";
 import ContextPage from "./ContextPage";
-import TodoMVC from "./TodoMVC";
+import ReducerPage from "./ReducerPage";
+import TodoMVCRedux from "./TodoMVC-Redux";
+import TodoMVCHook from "./TodoMVC-Hook";
 
 function App() {
   return (
     <Layout>
-      {/* <ContextPage/> */}
-      <TodoMVC/>
+      <ContextPage/>
+      {/* <ReducerPage/> */}
+      {/* <TodoMVCRedux/> */}
+      {/* <TodoMVCHook/> */}
     </Layout>
   );
 }

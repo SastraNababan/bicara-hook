@@ -1,22 +1,20 @@
-
-import React, { useState, createContext, useContext } from "react";
-import "./App.css";
+import React,{ useContext } from "react";
 import AppContext from './AppContext'
-const {
-  LangContext,
-  ThemeContext,
+import "./App.css";
+
+const { 
+  LangContext, 
   LangProvider,
-  ThemeProvider
+  ThemeContext,
+  ThemeProvider 
 } = AppContext;
 
-// When there's no Provider, the defaultValue argument is used for function createContext.
-
-function ContextPage() {
+function LangPage() {
   return (
     <LangProvider>
       <ThemeProvider>
         <Header />
-        <Content/>
+        <Content />
         <Footer />
       </ThemeProvider>
     </LangProvider>
@@ -25,32 +23,31 @@ function ContextPage() {
 
 function Header() {
   return (
-      <>
-        <i>-- Header --</i>
-        <h3>Header </h3>
-        <Menu />
-      </>
-  )
+    <>
+      <i>-- Header --</i>
+      <Menu />
+    </>
+  );
 }
 
 function Menu() {
-  const langState = useContext(LangContext)
-  const themeState = useContext(ThemeContext)
+  const props = useContext(LangContext);
+  const themeProps = useContext(ThemeContext)
   return (
     <div>
       <ul>
         <li>Home</li>
         <li>Products</li>
         <li>
-          Languange  
-          <select onChange={langState.changeLang} value={langState.lang}>
+          Languange
+          <select value={props.lang} onChange={props.changeLang}>
             <option value="🇬🇧"> 🇬🇧 English </option>
             <option value="🇮🇩"> 🇮🇩 Indonesia </option>
           </select>
         </li>
         <li>
-          Theme : {themeState.theme} 
-          <select onChange={themeState.changeTheme} value={themeState.state}>
+          Theme
+          <select value={themeProps.theme} onChange={themeProps.changeTheme}>
             <option value="light"> Light </option>
             <option value="dark"> Dark </option>
           </select>
@@ -59,25 +56,26 @@ function Menu() {
     </div>
   );
 }
- 
+
 function Content() {
-  return(
+  return (
     <>
       <i>-- Content --</i>
       <h3> 🤙 Hello React Context </h3>
     </>
-  )
+  );
 }
 
 function Footer() {
- const langState = useContext(LangContext);
- const themeState = useContext(ThemeContext); 
+  const props = useContext(LangContext);
+  const themeProps = useContext(ThemeContext);
   return (
     <>
       <i>-- Footer --</i>
-      <p>Languange : {langState.lang}  |  Theme : {themeState.theme}</p>
+      <p>Languange : {props.lang} </p>
+      <p>Theme : {themeProps.theme} </p>
     </>
   );
 }
- 
-export default ContextPage;
+
+export default LangPage;
