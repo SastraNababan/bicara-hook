@@ -1,13 +1,27 @@
-# useMemo & useCallback
+# React Hook Performance Optimization
 
-### useMemo return value
+## React Memo
+  - `Higher order component`, similar to `React.PureComponent` but for function components
+  - Only affects props changes
+  - Not works for object & array prop. Solution Options :
+    - Move variabel to outside function
+    - Create custom comparation function
+    - Save in component state
+   
+
+
+
+
+## useMemo & useCallback
+
+### useMemo return value prop
 ```
 const memoizedValue = useMemo(
   () => computeExpensiveValue(a, b), [a, b]
 );
 ```
 
-### useMemo return callback/fn
+### useCallback return callback or function prop
 ```
 const memoizedCallback = useCallback(
   doSomething(a, b),[a, b]
@@ -15,23 +29,5 @@ const memoizedCallback = useCallback(
 ```
 
 ```
-function Parent(){
-  return(
-    <div>
-      <p> Parent Component </p>
-    </div>
-  )
-}
-
-function ChildComponent(){
-  console.log('re-render')
-  <div>
-    <p> Child Component </p> 
-  </div>
-}
-React.memo(ChildComponent)
+useCallback(fn, deps) is equivalent to useMemo(() => fn, deps).
 ```
-
-
-
-React Memo vs useMemo what's the different ?

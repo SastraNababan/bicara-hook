@@ -6,7 +6,7 @@ function Layout(props) {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1> React Hook #4 - Performace Optimization</h1>
+        <h1> React Hook #4 - Perf Optimization </h1>
       </header>
       <main className="App-body">{props.children}</main>
       <footer className="App-footer">

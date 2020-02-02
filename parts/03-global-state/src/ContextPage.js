@@ -33,6 +33,7 @@ function Header() {
 function Menu() {
   const props = useContext(LangContext);
   const themeProps = useContext(ThemeContext)
+  console.log('menu render')
   return (
     <div>
       <ul>
@@ -58,6 +59,7 @@ function Menu() {
 }
 
 function Content() {
+  console.log("content render");
   return (
     <>
       <i>-- Content --</i>
@@ -69,6 +71,7 @@ function Content() {
 function Footer() {
   const props = useContext(LangContext);
   const themeProps = useContext(ThemeContext);
+  console.log("footer render")
   return (
     <>
       <i>-- Footer --</i>
